@@ -20,7 +20,7 @@ User as a normal [AngularJS filter](http://docs.angularjs.org/guide/dev_guide.te
 
 ```html
 <div ng-controller="SomeCtrl">
-  <div ng-bind-html-unsave="someValue | linkify"></div>
+  <div ng-bind-html-unsave="someValue | linkify"></div> <!-- linkified!! -->
 </div>
 ```
 
