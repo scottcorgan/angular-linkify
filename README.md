@@ -26,5 +26,6 @@ User as a normal [AngularJS filter](http://docs.angularjs.org/guide/dev_guide.te
 
 ## Todo
 
+* Custom href attributes for linkified strings
 * Options to exclude "@"ifies and hastags
 * Make as injectable service and/or directive
