@@ -34,7 +34,7 @@ angular.module('linkify')
           return linkify(text, type);
       };
   })
-  .directive('linkify', function ($filter, $timeout, $parse) {
+  .directive('linkify', function ($filter, $timeout) {
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {

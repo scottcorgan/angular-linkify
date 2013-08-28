@@ -18,6 +18,7 @@ module.exports = function (grunt) {
     uglify: {
       options: {
         preserveComments: false,
+        mangle: false,
         banner: '/*\n<%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
                 '<%= grunt.template.today("m/d/yyyy") %>\n' +
                 '<%= pkg.description %>\n' +
