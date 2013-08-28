@@ -39,3 +39,9 @@ User as a normal [AngularJS Filter](http://docs.angularjs.org/guide/dev_guide.te
 ## Todo
 
 * add Github support
+
+## Build
+
+```
+grunt
+```
