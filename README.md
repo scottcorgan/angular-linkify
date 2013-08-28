@@ -1,6 +1,6 @@
 # angular-linkify
 
-Angular filter and directive to linkify text. As of **v0.2.1**, angular-linkify works for twitter mentions, hashtags, and basic urls. Github support is COMING SOON!
+Angular filter, directive, and service to linkify text. As of **v0.3.0**, angular-linkify works for twitter/github mentions, twitter hashtags, and basic urls.
 
 ## Install
 
@@ -16,7 +16,7 @@ Inject module into your application
 angular.module('YourApp', ['linkify']);
 ```
 
-User as a normal [AngularJS Filter](http://docs.angularjs.org/guide/dev_guide.templates.filters.using_filters) or [AngularJS Directive](http://docs.angularjs.org/guide/directive)
+User as a [AngularJS Filter](http://docs.angularjs.org/guide/dev_guide.templates.filters.using_filters) or [AngularJS Directive](http://docs.angularjs.org/guide/directive)
 
 ```html
 <!-- As a filter -->
@@ -36,9 +36,22 @@ User as a normal [AngularJS Filter](http://docs.angularjs.org/guide/dev_guide.te
 <div ng-bind="someModel" linkify="twitter"></div>
 ```
 
-## Todo
+User as a service
 
-* add Github support
+```javascript
+// Injected into controller
+angular.module('someModule').controller('SomeCtrl', function ($scope.linkify) {
+  var text = "@scottcorgan and http://github.com";
+  
+  // Twitter
+  $scope.text = linkify.twitter(text);
+  
+  // Github
+  $scope.text = linkify.github(text);
+  
+});
+
+```
 
 ## Build
 
