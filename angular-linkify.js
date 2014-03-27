@@ -5,10 +5,6 @@ angular.module('linkify')
       'use strict';
       
       function linkify (_str, type) {
-          if (!_str) {
-            return '';
-          }
-          
           var _text = _str.replace( /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+(?![^\s]*?")([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/ig, function(url) { 
               var wrap = document.createElement('div');
               var anch = document.createElement('a');
@@ -20,7 +16,9 @@ angular.module('linkify')
           });
           
           // bugfix
-          if (!_text) return "";
+          if (!_text) {
+            return "";
+          }
           
           // Twitter
           if (type === 'twitter') {

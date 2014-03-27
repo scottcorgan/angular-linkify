@@ -1,6 +1,6 @@
 {
   "name": "angular-linkify",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Angular filter to linkify urls, \"@\" usernames, and hashtags.",
   "main": "angular-linkify.js",
   "directories": {
