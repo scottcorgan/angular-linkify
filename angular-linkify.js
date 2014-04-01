@@ -39,7 +39,7 @@ angular.module('linkify')
         return linkify(text, type);
       };
   })
-  .factory('linkify', function ($filter) {
+  .factory('linkify', ['$filter', function ($filter) {
     'use strict';
     
     function _linkifyAsType (type) {
@@ -53,8 +53,8 @@ angular.module('linkify')
       github: _linkifyAsType('github'),
       normal: _linkifyAsType()
     };
-  })
-  .directive('linkify', function ($filter, $timeout, linkify) {
+  }])
+  .directive('linkify', ['$filter', '$timeout', 'linkify', function ($filter, $timeout, linkify) {
     'use strict';
     
     return {
@@ -64,5 +64,5 @@ angular.module('linkify')
         $timeout(function () { element.html(linkify[type](element.html())); });
       }
     };
-  });
+  }]);
 
