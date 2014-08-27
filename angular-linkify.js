@@ -26,9 +26,10 @@ angular.module('linkify')
         
         // Twitter
         if (type === 'twitter') {
-          _text = _text.replace(/(|\s)*@(\w+)/g, '$1<a href="https://twitter.com/$2" target="_blank">@$2</a>');
-          _text = _text.replace(/(^|\s)*#(\w+)/g, '$1<a href="https://twitter.com/search?q=%23$2" target="_blank">#$2</a>');
+          _text = _text.replace(/(|\s)*@([a-zA-Zàáâãäåçèéêëìíîïðòóôõöùúûüýÿñ]+)/g, '$1<a href="https://twitter.com/$2" target="_blank">@$2</a>');
+          _text = _text.replace(/(^|\s)*#([a-zA-Zàáâãäåçèéêëìíîïðòóôõöùúûüýÿñ]+)/g, '$1<a href="https://twitter.com/search?q=%23$2" target="_blank">#$2</a>');
         }
+
         
         // Github
         if (type === 'github') {
