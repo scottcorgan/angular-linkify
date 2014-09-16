@@ -10,13 +10,13 @@ angular.module('linkify')
         }
         
         var _text = _str.replace( /(?:https?\:\/\/|www\.)+(?![^\s]*?")([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/ig, function(url) { 
-            var wrap = document.createElement('div');
-            var anch = document.createElement('a');
-            anch.href = url;
-            anch.target = "_blank";
-            anch.innerHTML = url;
-            wrap.appendChild(anch);
-            return wrap.innerHTML;
+          var wrap = document.createElement('div');
+          var anch = document.createElement('a');
+          anch.href = url;
+          anch.target = "_blank";
+          anch.innerHTML = url;
+          wrap.appendChild(anch);
+          return wrap.innerHTML;
         });
         
         // bugfix
@@ -26,9 +26,10 @@ angular.module('linkify')
         
         // Twitter
         if (type === 'twitter') {
-          _text = _text.replace(/(|\s)*@(\w+)/g, '$1<a href="https://twitter.com/$2" target="_blank">@$2</a>');
-          _text = _text.replace(/(^|\s)*#(\w+)/g, '$1<a href="https://twitter.com/search?q=%23$2" target="_blank">#$2</a>');
+          _text = _text.replace(/(|\s)*@([a-zA-Z0-9àáâãäåçèéêëìíîïðòóôõöùúûüýÿñ_-]+)/g, '$1<a href="https://twitter.com/$2" target="_blank">@$2</a>');
+          _text = _text.replace(/(^|\s)*#([a-zA-Z0-9àáâãäåçèéêëìíîïðòóôõöùúûüýÿñ_-]+)/g, '$1<a href="https://twitter.com/search?q=%23$2" target="_blank">#$2</a>');
         }
+
         
         // Github
         if (type === 'github') {
