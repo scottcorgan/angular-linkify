@@ -35,7 +35,7 @@ angular.module('someModule').controller('SomeCtrl', function ($scope, linkify, $
   
   // Twitter
   // Must use $sce.trustAsHtml() as of Angular 1.2.x
-  $scope.text = $sce.trustAsHtmllinkify.twitter(text));
+  $scope.text = $sce.trustAsHtml(linkify.twitter(text));
   // outputs: <a href="https://twitter.com/scottcorgan" target="_blank">scottcorgan</a> and <a href="http://github.com" target="_blank">http://github.com</a>
   
   // Github
