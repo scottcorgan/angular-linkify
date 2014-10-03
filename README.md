@@ -16,7 +16,7 @@ Inject module into your application
 angular.module('YourApp', ['linkify']);
 ```
 
-Use as a [AngularJS Filter](http://docs.angularjs.org/guide/dev_guide.templates.filters.using_filters) or [AngularJS Directive](http://docs.angularjs.org/guide/directive)
+Use as a [AngularJS Directive](http://docs.angularjs.org/guide/directive)
 
 ```html
 <!-- As a directive, no twitter -->
