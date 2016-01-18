@@ -4,9 +4,31 @@ Angular filter, directive, and service to linkify text. As of **v0.3.0**, angula
 
 ## Install
 
+Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/), CDN (jsDelivr) or downloaded files:
+
+* `bower install angular-linkify --save`
+* `npm install angular-linkify --save`
+* use [CDN file](https://www.jsdelivr.com/projects/angular.linkify)
+* download [angular-linkify.zip](https://github.com/scottcorgan/angular-linkify/zipball/master)
+
+
+
+Include `angular-linkify.min.js` in your apiNG application
+
+```html
+<!-- when using bower -->
+<script src="bower_components/angular-linkify/angular-linkify.min.js"></script>
+
+<!-- when using npm -->
+<script src="node_modules/angular-linkify/angular-linkify.min.js"></script>
+
+<!-- when using cdn file -->
+<script src="//cdn.jsdelivr.net/angular.linkify/1.2.0/angular-linkify.min.js"></script>
+
+<!-- when using downloaded files -->
+<script src="angular-linkify.min.js"></script>
 ```
-bower install angular-linkify --save
-```
+
 
 ## Usage
 
