@@ -12,7 +12,6 @@ module.exports = {
 
   externals: [
     {
-      linkifyjs: "linkify",
       angular: {
         root: "angular",
         commonjs2: "angular",
