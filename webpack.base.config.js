@@ -10,6 +10,18 @@ module.exports = {
     extensions: ['', '.js']
   },
 
+  externals: [
+    {
+      linkifyjs: "linkify",
+      angular: {
+        root: "angular",
+        commonjs2: "angular",
+        commonjs: "angular",
+        amd: "angular"
+      }
+    }
+  ],
+
   output: {
     library: 'AngularLinkify',
     libraryTarget: 'umd',

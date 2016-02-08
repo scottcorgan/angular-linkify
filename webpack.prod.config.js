@@ -6,16 +6,9 @@ var baseConfig  = require('./webpack.base.config.js');
 var config = baseConfig;
 
 config.plugins = [
-  new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('production')
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    compressor: {
-      warnings: false
-    },
-    sourceMap: false
-  })
+  new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.UglifyJsPlugin()
 ];
 
 module.exports = config;

@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "angular": "^1.5.0",
-    "linkify": "^0.2.1"
+    "linkifyjs": "^2.0.0-beta.9"
   }
 }
