@@ -9,7 +9,7 @@ angular.module('linkify')
           return;
         }
 
-        var _text = _str.replace( /(?:https?\:\/\/|www\.)+(?![^\s]*?")([\w.,@?!^=%&amp;:\/~+#-]*[\w@?!^=%&amp;\/~+#-])?/ig, function(url) {
+        var _text = _str.replace( /(?:https?:\/\/|www.)([-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|])/ig, function(url) {
           var wrap = document.createElement('div');
           var anch = document.createElement('a');
           anch.href = url;
