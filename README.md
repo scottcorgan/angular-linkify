@@ -13,7 +13,7 @@ Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/), CDN
 
 
 
-Include `angular-linkify.min.js` in your apiNG application
+Include `angular-linkify.min.js` in your angular application
 
 ```html
 <!-- when using bower -->
