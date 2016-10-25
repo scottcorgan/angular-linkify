@@ -12,7 +12,7 @@ angular.module('linkify')
         var _text = _str.replace( /(?:https?\:\/\/|www\.)+(?![^\s]*?")([\w.,@?!^=%&amp;:\/~+#-]*[\w@?!^=%&amp;\/~+#-])?/ig, function(url) {
           var wrap = document.createElement('div');
           var anch = document.createElement('a');
-          anch.href = url;
+          anch.href = url.replace(/&amp;/g, '&');
           anch.target = "_blank";
           anch.innerHTML = url;
           wrap.appendChild(anch);
