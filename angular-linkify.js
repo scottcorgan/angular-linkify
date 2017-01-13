@@ -9,15 +9,23 @@ angular.module('linkify')
           return;
         }
 
-        var _text = _str.replace( /(?:https?\:\/\/|www\.)+(?![^\s]*?")([\w.,@?!^=%&amp;:\/~+#-]*[\w@?!^=%&amp;\/~+#-])?/ig, function(url) {
-          var wrap = document.createElement('div');
-          var anch = document.createElement('a');
-          anch.href = url.replace(/&amp;/g, '&');
-          anch.target = "_blank";
-          anch.innerHTML = url;
-          wrap.appendChild(anch);
-          return wrap.innerHTML;
-        });
+        function addProtocol (url) {
+	        if(/(([\w]+:)?\/\/)/ig.test(url) === false) {
+	            url = 'http://' + url;
+	        }
+	        return url;
+	      }
+
+        var _text = _str.replace( /(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?/ig, function(url) {
+	            var wrap = document.createElement('div');
+	            var anch = document.createElement('a');
+	            anch.href = addProtocol(url);
+	            anch.target = '_blank';
+	            anch.innerHTML = url;
+	            wrap.appendChild(anch);
+	            return wrap.innerHTML;
+	        });
+
 
         // bugfix
         if (!_text) {
