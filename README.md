@@ -23,7 +23,7 @@ Include `angular-linkify.min.js` in your angular application
 <script src="node_modules/angular-linkify/angular-linkify.min.js"></script>
 
 <!-- when using cdn file -->
-<script src="//cdn.jsdelivr.net/angular.linkify/1.2.0/angular-linkify.min.js"></script>
+<script src="//cdn.jsdelivr.net/angular.linkify/2.0.0/angular-linkify.min.js"></script>
 
 <!-- when using downloaded files -->
 <script src="angular-linkify.min.js"></script>
