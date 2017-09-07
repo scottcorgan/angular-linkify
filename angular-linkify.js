@@ -16,16 +16,17 @@ angular.module('linkify')
 	        return url;
 	      }
 
-        var _text = _str.replace( /(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?/ig, function(url) {
-	            var wrap = document.createElement('div');
-	            var anch = document.createElement('a');
-	            anch.href = addProtocol(url);
-	            anch.target = '_blank';
-	            anch.innerHTML = url;
-	            wrap.appendChild(anch);
-	            return wrap.innerHTML;
-	        });
+        var regex = /(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?/ig;
 
+        var _text = _str.replace( regex, function(url) {
+              var wrap = document.createElement('div');
+              var anch = document.createElement('a');
+              anch.href = addProtocol(url);
+              anch.target = '_blank';
+              anch.innerHTML = url;
+              wrap.appendChild(anch);
+              return wrap.innerHTML;
+          });
 
         // bugfix
         if (!_text) {
