@@ -32,16 +32,19 @@ angular.module('linkify')
           return '';
         }
 
+        // Email
+        _text = _text.replace(/((([a-zA-Z]|[0-9])|([-]|[_]|[.]))+[@](([a-zA-Z0-9])|([-])){2,63}[.](([a-zA-Z0-9]){2,63})+)/g, '<a href="mailto:$1">$1</a>');
+
         // Twitter
         if (type === 'twitter') {
-          _text = _text.replace(/(|\s)*@([\u00C0-\u1FFF\w]+)/g, '$1<a href="https://twitter.com/$2" target="_blank">@$2</a>');
+          _text = _text.replace(/(^|\s)*@([\u00C0-\u1FFF\w]+)/g, '$1<a href="https://twitter.com/$2" target="_blank">@$2</a>');
           _text = _text.replace(/(^|\s)*#([\u00C0-\u1FFF\w]+)/g, '$1<a href="https://twitter.com/search?q=%23$2" target="_blank">#$2</a>');
         }
 
 
         // Github
         if (type === 'github') {
-          _text = _text.replace(/(|\s)*@(\w+)/g, '$1<a href="https://github.com/$2" target="_blank">@$2</a>');
+          _text = _text.replace(/(^|\s)*@(\w+)/g, '$1<a href="https://github.com/$2" target="_blank">@$2</a>');
         }
 
         return _text;
