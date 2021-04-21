@@ -22,6 +22,7 @@ angular.module('linkify')
 	            anch.href = addProtocol(url);
 	            anch.target = '_blank';
 	            anch.innerHTML = url;
+                // Set the rel attribute to prevent tabnabbing
                 anch.setAttribute('rel', 'noopener noreferrer');
 	            wrap.appendChild(anch);
 	            return wrap.innerHTML;
